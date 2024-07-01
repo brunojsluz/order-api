@@ -9,4 +9,8 @@ class OrderService {
     fun createOrder(order: OrderModel) {
         TODO("Not yet implemented")
     }
+
+    fun deleteOrder(id: Long) {
+        TODO("Not yet implemented")
+    }
 }
