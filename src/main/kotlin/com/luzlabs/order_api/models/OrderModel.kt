@@ -1,9 +1,17 @@
 package com.luzlabs.order_api.models
 
+import jakarta.persistence.Entity
+import jakarta.persistence.GeneratedValue
+import jakarta.persistence.GenerationType
+import jakarta.persistence.Id
 import java.math.BigDecimal
 import java.time.LocalDate
 
+@Entity
 data class OrderModel(
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
     val orderDate: LocalDate,
     val subTotal: BigDecimal,
@@ -12,5 +20,6 @@ data class OrderModel(
     val total: BigDecimal,
     val currency: String,
     val notes: String,
+
     val items: List<OrderItemModel>
 )

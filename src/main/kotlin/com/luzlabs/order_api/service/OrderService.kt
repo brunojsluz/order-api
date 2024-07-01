@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service
 @Service
 class OrderService {
 
-    fun createOrder(order: OrderModel) {
+    fun createOrder(order: OrderModel): OrderModel {
         TODO("Not yet implemented")
     }
 

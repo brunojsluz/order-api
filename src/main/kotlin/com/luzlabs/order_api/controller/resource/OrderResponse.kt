@@ -4,7 +4,7 @@ import java.math.BigDecimal
 import java.time.LocalDate
 
 data class OrderResponse (
-    val id: Long,
+    val id: Long?,
     val orderDate: LocalDate,
     val subTotal: BigDecimal,
     val taxes: BigDecimal,
