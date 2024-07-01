@@ -3,8 +3,8 @@ package com.luzlabs.order_api.models
 import java.math.BigDecimal
 import java.time.LocalDate
 
-data class OrderModel (
-    val id: Long,
+data class OrderModel(
+    val id: Long? = null,
     val orderDate: LocalDate,
     val subTotal: BigDecimal,
     val taxes: BigDecimal,
