@@ -1,7 +1,9 @@
 package com.luzlabs.order_api.controller
 
+import com.luzlabs.order_api.controller.mapper.OrderModelMapper
 import com.luzlabs.order_api.controller.resource.OrderRequest
 import com.luzlabs.order_api.controller.resource.OrderResponse
+import com.luzlabs.order_api.service.OrderService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -11,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/order")
-class OrderController {
+class OrderController(private val orderService: OrderService) {
 
     @GetMapping("/{id}")
     fun getOrderById(id: Long): OrderResponse? {
@@ -25,7 +27,6 @@ class OrderController {
 
     @PostMapping
     fun createOrder(@RequestBody request: OrderRequest) {
-
-
+        orderService.createOrder(OrderModelMapper.mapFrom(request))
     }
 }
