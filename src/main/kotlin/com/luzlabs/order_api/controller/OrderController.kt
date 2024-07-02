@@ -19,7 +19,7 @@ import org.springframework.web.util.UriComponentsBuilder
 
 
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/v1/order")
 class OrderController(private val orderService: OrderService) {
 
     @GetMapping("/{id}")
@@ -29,7 +29,7 @@ class OrderController(private val orderService: OrderService) {
 
     @GetMapping
     fun listOrders(): List<OrderResponse>? {
-        return null;
+        return orderService.getAll().map { OrderResponseMapper.mapFrom(it) };
     }
 
     @PostMapping

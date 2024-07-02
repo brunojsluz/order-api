@@ -7,7 +7,6 @@ class OrderItemModelMapper {
     companion object {
         fun mapFrom(request: OrderItemRequest): OrderItemModel {
             return OrderItemModel(
-                productId = request.productId,
                 description = request.description,
                 quantity = request.quantity,
                 unitPrice = request.unitPrice,

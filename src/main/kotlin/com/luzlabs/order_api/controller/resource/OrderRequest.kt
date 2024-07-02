@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull
 import java.math.BigDecimal
 
 data class OrderRequest(
-    @field:NotEmpty
+    @field:NotNull
     val subTotal: BigDecimal,
     @field:NotNull
     val taxes: BigDecimal,
